@@ -1,0 +1,11 @@
+.claude/
+.aider*
+CLAUDE.md
+*.log
+node_modules/
+.DS_Store
+Thumbs.db
+*.zip
+
+# Rejected logo drafts — final approved logo will be added fresh under assets/
+logo/

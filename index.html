@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="he" dir="rtl" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ScanOn · יותר ביקורות בגוגל ב-Tap אחד | כרטיסי NFC לעסקים</title>
+<meta name="description" content="ScanOn — כרטיס NFC חכם שמביא לעסק שלכם יותר ביקורות חמישה כוכבים בגוגל. הלקוח מקרב את הטלפון, קופץ ישר לעמוד הביקורות. יותר דירוג, יותר חשיפה, יותר לקוחות. ללא אפליקציה.">
+<meta name="theme-color" content="#022658">
+<link rel="canonical" href="https://scanon.co.il/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:site_name" content="ScanOn">
+<meta property="og:title" content="ScanOn · יותר ביקורות בגוגל ב-Tap אחד">
+<meta property="og:description" content="כרטיס NFC חכם שהופך כל לקוח מרוצה לביקורת חמישה כוכבים בגוגל. Tap אחד וזהו.">
+<meta property="og:image" content="assets/img/card-blue.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Security -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/styles.css?v=5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23022658'/%3E%3Cpath d='M11 20V12M11 12h4a3 3 0 0 1 0 6h-4m10-6v8' stroke='white' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='24' cy='11' r='1.6' fill='%23FBBF24'/%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Product",
+  "name":"ScanOn — כרטיס NFC לביקורות גוגל",
+  "description":"כרטיס NFC חכם שמפנה לקוחות ישירות לעמוד הביקורות של העסק בגוגל, כדי לצבור יותר ביקורות חמישה כוכבים בקלות.",
+  "brand":{"@type":"Brand","name":"ScanOn"},
+  "category":"NFC Review Card",
+  "image":"assets/img/card-blue.png"
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#hero">דלגו לתוכן</a>
+
+<!-- ===== Loader ===== -->
+<div class="loader" id="loader">
+  <div class="loader__in">
+    <span class="loader__mark" aria-hidden="true">
+      <svg viewBox="0 0 40 40" width="48" height="48"><rect width="40" height="40" rx="11" fill="#fff"/><path d="M14 26V14h5.2a3.4 3.4 0 0 1 0 6.8H14M26 14v12" stroke="var(--navy)" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="30.5" cy="12" r="2" fill="var(--gold)"/></svg>
+      <span class="loader__ring"></span><span class="loader__ring"></span>
+    </span>
+    <span class="loader__name">Scan<b>On</b></span>
+    <span class="loader__bar"><i></i></span>
+  </div>
+</div>
+
+<!-- ===== Accessibility widget ===== -->
+<button class="a11y-btn" aria-label="פתיחת תפריט נגישות" aria-expanded="false" aria-controls="a11yPanel">
+  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="4" r="2" fill="currentColor"/><path d="M12 7c-3 0-5 1-5 1M12 7c3 0 5 1 5 1M12 7v6m0 0l-2.5 5M12 13l2.5 5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+</button>
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="הגדרות נגישות" aria-hidden="true">
+  <h2 class="a11y-title">נגישות</h2>
+  <div class="a11y-row"><span>ניגודיות גבוהה</span><div class="a11y-seg" role="group" aria-label="ניגודיות"><button class="a11y-chip" data-key="contrast" data-val="normal" aria-pressed="true">רגילה</button><button class="a11y-chip" data-key="contrast" data-val="high" aria-pressed="false">גבוהה</button></div></div>
+  <div class="a11y-row"><span>גודל טקסט</span><div class="a11y-seg" role="group" aria-label="גודל טקסט"><button class="a11y-chip" data-key="text" data-val="normal" aria-pressed="true">רגיל</button><button class="a11y-chip" data-key="text" data-val="large" aria-pressed="false">גדול</button></div></div>
+  <div class="a11y-row"><span>הדגשת קישורים</span><div class="a11y-seg" role="group" aria-label="הדגשת קישורים"><button class="a11y-chip" data-key="links" data-val="off" aria-pressed="true">כבוי</button><button class="a11y-chip" data-key="links" data-val="on" aria-pressed="false">דלוק</button></div></div>
+  <div class="a11y-row"><span>עצירת אנימציות</span><div class="a11y-seg" role="group" aria-label="עצירת אנימציות"><button class="a11y-chip" data-key="motion" data-val="on" aria-pressed="true">דלוקות</button><button class="a11y-chip" data-key="motion" data-val="off" aria-pressed="false">עצורות</button></div></div>
+  <button class="a11y-reset">איפוס הגדרות</button>
+  <a class="a11y-statement" href="accessibility.html">הצהרת נגישות</a>
+</div>
+
+<!-- ===== Nav ===== -->
+<header class="nav" id="nav">
+  <div class="shell nav__in">
+    <a class="brand" href="#hero" aria-label="ScanOn — לדף הבית">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="30" height="30"><rect width="40" height="40" rx="11" fill="var(--navy)"/><path d="M14 26V14h5.2a3.4 3.4 0 0 1 0 6.8H14M26 14v12" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="30.5" cy="12" r="2" fill="var(--gold)"/></svg>
+      </span>
+      <span class="brand__name">Scan<b>On</b></span>
+    </a>
+    <nav class="nav__links" aria-label="ניווט ראשי">
+      <a href="#how">איך זה עובד</a>
+      <a href="#benefits">יתרונות</a>
+      <a href="#why">למה ביקורות</a>
+      <a href="#faq">שאלות נפוצות</a>
+    </nav>
+    <a class="btn btn--nav" data-wa data-wa-msg="היי, אשמח לפרטים על כרטיס ScanOn לעסק שלי 🙂">הזמנת כרטיס</a>
+    <button class="nav__burger" aria-label="פתיחת תפריט" aria-expanded="false" aria-controls="drawer"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <nav class="drawer__links" aria-label="ניווט נייד">
+    <a href="#how">איך זה עובד</a>
+    <a href="#benefits">יתרונות</a>
+    <a href="#why">למה ביקורות</a>
+    <a href="#faq">שאלות נפוצות</a>
+    <a class="btn btn--gold btn--lg" data-wa data-wa-msg="היי, אשמח לפרטים על כרטיס ScanOn לעסק שלי 🙂">הזמנת כרטיס</a>
+  </nav>
+</div>
+
+<main>
+<!-- ===== HERO — 3D scroll card ===== -->
+<section class="hero" id="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="hero__stage" id="heroStage">
+    <div class="shell hero__grid">
+      <div class="hero__copy">
+        <p class="hero__stars" aria-label="חמישה כוכבים">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z" fill="var(--gold)"/></svg>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z" fill="var(--gold)"/></svg>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z" fill="var(--gold)"/></svg>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z" fill="var(--gold)"/></svg>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z" fill="var(--gold)"/></svg>
+          <span>הדרך הכי פשוטה לגדול בגוגל</span>
+        </p>
+        <h1 class="hero__title">
+          <span class="ln">הפכו כל לקוח מרוצה</span>
+          <span class="ln">לביקורת <em>חמישה כוכבים</em></span>
+          <span class="ln">בגוגל.</span>
+        </h1>
+        <p class="hero__lede">כרטיס NFC חכם של ScanOn — הלקוח מקרב את הטלפון, וקופץ ישר לעמוד הביקורות שלכם. <b>Tap אחד</b>, בלי אפליקציה, בלי טפסים. יותר ביקורות אמיתיות, דירוג גבוה יותר, ויותר לקוחות שמוצאים אתכם.</p>
+        <div class="hero__cta">
+          <a class="btn btn--gold btn--lg magnetic" data-wa data-wa-msg="היי, אשמח להזמין כרטיס ScanOn לעסק שלי 🙂">
+            הזמינו כרטיס
+            <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M20 4L4 4M4 4l0 16M4 4l16 16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn--ghost btn--lg" href="#how">איך זה עובד?</a>
+        </div>
+        <ul class="hero__trust">
+          <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> ללא אפליקציה</li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> עובד על כל טלפון</li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> חד־פעמי, בלי מנוי</li>
+        </ul>
+      </div>
+
+      <div class="hero__cardwrap">
+        <div class="scene" id="scene">
+          <div class="card3d" id="card3d">
+            <div class="face face--front"><img src="assets/img/card-blue.png" alt="כרטיס ScanOn בצבע כחול — Tap אחד ודרגו אותנו בגוגל" width="1000" height="1097" fetchpriority="high"></div>
+            <div class="face face--back"><img src="assets/img/card-black.png" alt="כרטיס ScanOn בצבע שחור — Tap אחד ודרגו אותנו בגוגל" width="1000" height="1097"></div>
+            <div class="face face--right"></div>
+            <div class="face face--left"></div>
+            <div class="face face--top"></div>
+            <div class="face face--bottom"></div>
+          </div>
+          <div class="scene__shadow" aria-hidden="true"></div>
+          <div class="scene__ripple" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+        <p class="scene__hint" aria-hidden="true">גללו כדי לסובב<svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 5v14M12 19l-5-5M12 19l5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT / MEET SCANON ===== -->
+<section class="sec sec--about" id="about">
+  <div class="shell about__in">
+    <div class="about__copy will-rise">
+      <h2 class="h2">הכירו את <span class="u">ScanOn.</span></h2>
+      <p class="lede">אנחנו הופכים את הנכס הכי חשוב של עסק מקומי — המוניטין שלו — לפשוט כמו נגיעה.</p>
+      <p class="about__body">ScanOn נולד מתסכול אחד פשוט: עסקים מעולים מפסידים לקוחות רק כי אין להם מספיק ביקורות בגוגל. בנינו כרטיס NFC חכם שסוגר בדיוק את הפער הזה — הלקוח מקרב טלפון, ותוך שנייה משאיר ביקורת. בלי אפליקציות, בלי חיכוך, בלי לרדוף אחרי אף אחד. כל מה שנשאר לכם זה להמשיך לתת שירות טוב — ולראות את הדירוג מטפס.</p>
+      <ul class="about__chips">
+        <li><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> פשוט כמו נגיעה</li>
+        <li><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> ביקורות אמיתיות בלבד</li>
+        <li><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> מתאים לכל עסק</li>
+      </ul>
+      <a class="btn btn--navy btn--lg magnetic" data-wa data-wa-msg="היי, אשמח להכיר את ScanOn ולשמוע פרטים 🙂">דברו איתנו</a>
+    </div>
+
+    <div class="about__visual will-rise" aria-hidden="true">
+      <div class="tapcard">
+        <span class="tapcard__waves"><span></span><span></span><span></span></span>
+        <div class="review-pop">
+          <div class="review-pop__top">
+            <span class="review-pop__g">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#4285F4" d="M23 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.2a5.3 5.3 0 0 1-2.3 3.5v2.9h3.7C21.8 19 23 15.9 23 12.3z"/><path fill="#34A853" d="M12 24c3.1 0 5.7-1 7.6-2.8l-3.7-2.9c-1 .7-2.3 1.1-3.9 1.1-3 0-5.5-2-6.4-4.8H1.8v3C3.7 21.4 7.6 24 12 24z"/><path fill="#FBBC05" d="M5.6 14.6a7.2 7.2 0 0 1 0-4.6v-3H1.8a12 12 0 0 0 0 10.6l3.8-3z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.2.6 4.4 1.7l3.3-3.3C17.7 1.2 15.1 0 12 0 7.6 0 3.7 2.6 1.8 6.4l3.8 3C6.5 6.7 9 4.8 12 4.8z"/></svg>
+            </span>
+            <div><b>ביקורת חדשה</b><span>ממש עכשיו</span></div>
+          </div>
+          <div class="review-pop__stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z" fill="var(--gold)"/></svg>
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z" fill="var(--gold)"/></svg>
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z" fill="var(--gold)"/></svg>
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z" fill="var(--gold)"/></svg>
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z" fill="var(--gold)"/></svg>
+          </div>
+          <p class="review-pop__txt">שירות מדהים, ממליץ בחום! ✨</p>
+        </div>
+        <div class="tapcard__phone">
+          <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.4" stroke="currentColor" stroke-width="1.7" fill="none"/><path d="M11 18h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section class="sec sec--problem" id="problem">
+  <div class="shell">
+    <div class="sec-head will-rise">
+      <h2 class="h2">בלי ביקורות, אתם פשוט <span class="u">לא באים בחשבון.</span></h2>
+      <p class="lede">היום לפני שקונים, מזמינים או מתקשרים — כולם בודקים בגוגל. עסק עם מעט ביקורות מאבד לקוחות עוד לפני השיחה הראשונה, וצולל בדירוג המקומי מול המתחרים.</p>
+    </div>
+    <div class="prob-grid">
+      <article class="prob-card will-rise">
+        <span class="prob-num">9/10</span>
+        <p>לקוחות קוראים ביקורות בגוגל לפני שהם בוחרים עסק חדש.</p>
+      </article>
+      <article class="prob-card will-rise">
+        <span class="prob-num">4.0<small>★</small></span>
+        <p>רוב האנשים לא ייצרו קשר עם עסק שמדורג מתחת לזה.</p>
+      </article>
+      <article class="prob-card will-rise">
+        <span class="prob-num">~1%</span>
+        <p>מהלקוחות המרוצים משאירים ביקורת בעצמם — בלי שמזכירים להם.</p>
+      </article>
+    </div>
+
+    <!-- Animated rise to #1 on Google -->
+    <div class="rank will-rise" id="rankRise" aria-label="הדגמה: עלייה לראש תוצאות גוגל עם ScanOn">
+      <div class="rank__bar">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M21 21l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>עסקים מומלצים באזור שלך</span>
+        <span class="rank__src" aria-hidden="true">Google</span>
+      </div>
+      <ol class="rank__list">
+        <li class="rank__row" data-slot="0"><span class="rank__pin" aria-hidden="true"></span><div class="rank__info"><b>מתחרה א׳</b><span class="rank__meta"><span class="gstars" data-fill="94" aria-hidden="true"></span><span>4.7 · 189 ביקורות</span></span></div></li>
+        <li class="rank__row" data-slot="1"><span class="rank__pin" aria-hidden="true"></span><div class="rank__info"><b>מתחרה ב׳</b><span class="rank__meta"><span class="gstars" data-fill="90" aria-hidden="true"></span><span>4.5 · 132 ביקורות</span></span></div></li>
+        <li class="rank__row" data-slot="2"><span class="rank__pin" aria-hidden="true"></span><div class="rank__info"><b>מתחרה ג׳</b><span class="rank__meta"><span class="gstars" data-fill="92" aria-hidden="true"></span><span>4.6 · 98 ביקורות</span></span></div></li>
+        <li class="rank__row rank__row--you" data-you data-slot="3"><span class="rank__pin" aria-hidden="true"></span><div class="rank__info"><b>העסק שלכם</b><span class="rank__meta"><span class="gstars" data-fill="76" data-fill-to="98" aria-hidden="true"></span><span><em data-rate>3.8</em> · <em data-rev>11</em> ביקורות</span></span></div><span class="rank__badge">#1 בגוגל</span></li>
+      </ol>
+      <p class="rank__cap"><span class="rank__cap-b">בלי ביקורות — אחרונים בתור.</span> <b class="rank__cap-a">עם ScanOn — קופצים לראש.</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOLUTION / HOW ===== -->
+<div class="wave wave--to-navy" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64 C240,120 480,120 720,80 C960,40 1200,0 1440,40 L1440,120 L0,120 Z"></path></svg></div>
+<section class="sec sec--how sec--navy" id="how">
+  <div class="shell">
+    <div class="sec-head sec-head--center will-rise">
+      <h2 class="h2 h2--light">ScanOn עושה את זה פשוט — <span class="hl">Tap אחד וזהו.</span></h2>
+      <p class="lede lede--light">בלי אפליקציות, בלי קודי QR מסובכים, בלי לבקש מהלקוח כלום. מקרבים טלפון לכרטיס — ונופלים ישר על עמוד הביקורות שלכם בגוגל.</p>
+    </div>
+
+    <div class="steps" id="steps">
+      <span class="steps__line" aria-hidden="true"><i></i></span>
+      <ol class="steps__list">
+        <li class="step">
+          <div class="step__node">
+            <svg class="step__ring" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="39"/></svg>
+            <span class="step__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linejoin="round"/></svg></span>
+            <span class="step__badge">1</span>
+          </div>
+          <h3>נותנים שירות מעולה</h3>
+          <p>הלקוח מסיים מרוצה — הרגע המושלם לבקש ממנו ביקורת.</p>
+        </li>
+        <li class="step">
+          <div class="step__node">
+            <svg class="step__ring" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="39"/></svg>
+            <span class="step__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><rect x="8" y="3" width="8" height="15" rx="2" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M18 8c2 1 2 5 0 6M20.5 6.5c3 2 3 7 0 9" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></span>
+            <span class="step__badge">2</span>
+          </div>
+          <h3>Tap אחד על הכרטיס</h3>
+          <p>מקרב את הטלפון לכרטיס ScanOn — נפתח מיד עמוד הביקורות שלכם.</p>
+        </li>
+        <li class="step">
+          <div class="step__node">
+            <svg class="step__ring" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="39"/></svg>
+            <span class="step__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M3 17l5-5 4 3 7-8" stroke="currentColor" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 7v4h-4" stroke="currentColor" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="step__badge">3</span>
+          </div>
+          <h3>הביקורת עולה — ואתם עולים איתה</h3>
+          <p>עוד ביקורת חמישה כוכבים, דירוג גבוה יותר, ויותר לקוחות חדשים מגוגל.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+<div class="wave wave--from-navy" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,40 C240,0 480,40 720,72 C960,104 1200,96 1440,56 L1440,0 L0,0 Z"></path></svg></div>
+
+<!-- ===== BENEFITS ===== -->
+<section class="sec sec--benefits" id="benefits">
+  <div class="shell">
+    <div class="sec-head will-rise">
+      <h2 class="h2">כל מה שהעסק שלכם מרוויח <span class="u">מכרטיס אחד קטן.</span></h2>
+    </div>
+    <div class="ben-grid">
+      <article class="ben will-fade">
+        <div class="ben__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linejoin="round"/></svg></div>
+        <h3>יותר ביקורות אמיתיות</h3>
+        <p>הופכים לקוחות מרוצים לביקורות — בקלות ובלי מאמץ, בזמן אמת.</p>
+      </article>
+      <article class="ben will-fade">
+        <div class="ben__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10z" stroke="currentColor" stroke-width="1.7" fill="none"/><circle cx="12" cy="11" r="2.4" stroke="currentColor" stroke-width="1.7" fill="none"/></svg></div>
+        <h3>דירוג גבוה יותר בגוגל</h3>
+        <p>יותר ביקורות ודירוג טוב = מקום גבוה יותר במפות ובחיפוש המקומי.</p>
+      </article>
+      <article class="ben will-fade">
+        <div class="ben__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M16 3.1a4 4 0 0 1 0 7.8M17 20v-1a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v1" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/><circle cx="8.5" cy="7" r="3.5" stroke="currentColor" stroke-width="1.7" fill="none"/></svg></div>
+        <h3>יותר לידים אורגניים</h3>
+        <p>לקוחות חדשים מוצאים אתכם ראשונים — בלי לשלם על כל קליק.</p>
+      </article>
+      <article class="ben will-fade">
+        <div class="ben__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><rect x="7" y="2" width="10" height="20" rx="2.4" stroke="currentColor" stroke-width="1.7" fill="none"/><path d="M11 18h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3>ללא אפליקציה להורדה</h3>
+        <p>עובד ישר מול הטלפון של הלקוח דרך NFC — כלום להתקין, כלום להסביר.</p>
+      </article>
+      <article class="ben will-fade">
+        <div class="ben__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M13 2L4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5z" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linejoin="round"/></svg></div>
+        <h3>מוכן ומתוכנת מראש</h3>
+        <p>מגיע מוגדר ומחובר לעמוד הביקורות שלכם — מניחים על הדלפק ומתחילים לצבור.</p>
+      </article>
+      <article class="ben will-fade">
+        <div class="ben__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M8 12a3 3 0 1 0 0-.01M16 12a3 3 0 1 1 0-.01M8 12c0 2.2 1.6 4 4 4s4-1.8 4-4" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg></div>
+        <h3>חד־פעמי, בלי מנוי חודשי</h3>
+        <p>קונים פעם אחת ומשתמשים שוב ושוב. בלי תשלומים חוזרים, בלי הפתעות.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCT COLORS ===== -->
+<section class="sec sec--product" id="product">
+  <div class="shell product__in">
+    <div class="product__copy will-rise">
+      <h2 class="h2">שני צבעים. <span class="u">אותה תוצאה.</span></h2>
+      <p class="lede">בחרו את הכרטיס שמתאים למותג שלכם — כחול קלאסי או שחור יוקרתי. שניהם עם אותו מנגנון חכם שמביא לכם ביקורות, ושניהם נראים מצוין על כל דלפק.</p>
+      <ul class="product__pts">
+        <li><span class="dot dot--blue" aria-hidden="true"></span> כחול ScanOn — נקי, ידידותי, בולט</li>
+        <li><span class="dot dot--black" aria-hidden="true"></span> שחור פרימיום — אלגנטי ומינימלי</li>
+        <li><span class="dot dot--gold" aria-hidden="true"></span> מגיע מוכן — מחובר מראש לעמוד הביקורות שלכם</li>
+      </ul>
+      <a class="btn btn--navy btn--lg magnetic" data-wa data-wa-msg="היי, אשמח לראות אפשרויות מיתוג לכרטיס ScanOn 🙂">בחרו את הכרטיס שלכם</a>
+    </div>
+    <div class="product__cards will-rise" aria-hidden="true">
+      <div class="pcard pcard--b"><img src="assets/img/card-blue.png" alt="" width="1000" height="1097" loading="lazy"></div>
+      <div class="pcard pcard--k"><img src="assets/img/card-black.png" alt="" width="1000" height="1097" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY REVIEWS (stats band) ===== -->
+<div class="wave wave--to-navy" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64 C240,120 480,120 720,80 C960,40 1200,0 1440,40 L1440,120 L0,120 Z"></path></svg></div>
+<section class="sec sec--why sec--navy" id="why">
+  <div class="shell">
+    <div class="sec-head sec-head--center will-rise">
+      <h2 class="h2 h2--light">המספרים <span class="hl">שמדברים בעד עצמם.</span></h2>
+      <p class="lede lede--light">ביקורות הן היום המטבע של האמון. ככה זה משפיע ישירות על כמה לקוחות בוחרים בכם:</p>
+    </div>
+    <div class="stats">
+      <div class="stat will-rise"><b class="stat__num" data-count="88" data-suffix="%">0</b><span>מהצרכנים סומכים על ביקורות אונליין כמו על המלצה מחבר</span></div>
+      <div class="stat will-rise"><b class="stat__num" data-count="9" data-suffix="/10">0</b><span>בודקים ביקורות בגוגל לפני החלטה על עסק</span></div>
+      <div class="stat will-rise"><b class="stat__num" data-count="76" data-suffix="%">0</b><span>יבחרו קודם בעסק עם דירוג ומספר ביקורות גבוה יותר</span></div>
+    </div>
+    <p class="stats__src will-rise">מבוסס על מגמות מקובלות בשוק צרכנות הביקורות המקומי.</p>
+  </div>
+</section>
+<div class="wave wave--from-navy" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,40 C240,0 480,40 720,72 C960,104 1200,96 1440,56 L1440,0 L0,0 Z"></path></svg></div>
+
+<!-- ===== FAQ ===== -->
+<section class="sec sec--faq" id="faq">
+  <div class="shell shell--narrow">
+    <div class="sec-head sec-head--center will-rise">
+      <h2 class="h2">שאלות <span class="u">נפוצות</span></h2>
+    </div>
+    <div class="faq">
+      <details class="faq__item will-rise"><summary>צריך אפליקציה מיוחדת כדי שזה יעבוד?<span class="faq__x" aria-hidden="true"></span></summary><div class="faq__a"><p>לא. טכנולוגיית ה-NFC מובנית כבר בטלפון של הלקוח. הוא פשוט מקרב את המכשיר לכרטיס — ועמוד הביקורות שלכם נפתח אוטומטית. שום דבר להתקין.</p></div></details>
+      <details class="faq__item will-rise"><summary>זה עובד גם על אייפון וגם על אנדרואיד?<span class="faq__x" aria-hidden="true"></span></summary><div class="faq__a"><p>כן. הכרטיס עובד על הרוב המוחלט של הטלפונים מהשנים האחרונות — אייפון ואנדרואיד כאחד. באייפון הקריאה אוטומטית לגמרי, בלי שום פעולה מיוחדת.</p></div></details>
+      <details class="faq__item will-rise"><summary>מה אם עדיין אין לי עמוד עסק בגוגל?<span class="faq__x" aria-hidden="true"></span></summary><div class="faq__a"><p>אין בעיה — נעזור לכם להקים ולחבר את פרופיל Google Business, ונכוון את הכרטיס ישר לעמוד הביקורות שלכם. אתם מקבלים הכל מוכן לשימוש.</p></div></details>
+      <details class="faq__item will-rise"><summary>כמה זמן לוקח להתחיל להשתמש?<span class="faq__x" aria-hidden="true"></span></summary><div class="faq__a"><p>ההגדרה לוקחת דקות ספורות. אתם מקבלים כרטיס מתוכנת ומוכן — מניחים על הדלפק, ומתחילים לצבור ביקורות כבר מהלקוח הבא.</p></div></details>
+      <details class="faq__item will-rise"><summary>האם זה תקין מול המדיניות של גוגל?<span class="faq__x" aria-hidden="true"></span></summary><div class="faq__a"><p>בהחלט. הכרטיס רק מקל על לקוחות אמיתיים להשאיר ביקורת אמיתית על חוויה אמיתית — בדיוק מה שגוגל מעודדת. אין פה שום דבר מזויף או אוטומטי, רק הסרה של החיכוך שמונע מלקוחות מרוצים לדרג אתכם.</p></div></details>
+      <details class="faq__item will-rise"><summary>איפה כדאי לשים את הכרטיס בעסק?<span class="faq__x" aria-hidden="true"></span></summary><div class="faq__a"><p>בכל מקום שנוח ללקוח ממש לפני שהוא יוצא — על הדלפק, ליד הקופה, על השולחן או אפילו כמדבקה על הקיר. ככל שהכרטיס נגיש ובולט יותר, כך תקבלו יותר ביקורות. אפשר כמובן להזמין כמה כרטיסים לנקודות שונות.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ORDER / CTA ===== -->
+<section class="sec sec--order" id="order">
+  <div class="shell order__in">
+    <div class="order__copy will-rise">
+      <p class="hero__stars" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z" fill="var(--gold)"/></svg>
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z" fill="var(--gold)"/></svg>
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z" fill="var(--gold)"/></svg>
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z" fill="var(--gold)"/></svg>
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 21.2l1.4-6.8L2.2 9.7l6.9-.7z" fill="var(--gold)"/></svg>
+      </p>
+      <h2 class="h2 h2--light">מוכנים לקבל <span class="hl">יותר ביקורות?</span></h2>
+      <p class="lede lede--light">השאירו פרטים ונחזור אליכם בוואטסאפ עם כל מה שצריך כדי להתחיל — התאמת הכרטיס, חיבור לגוגל והזמנה. בלי התחייבות.</p>
+      <ul class="order__pts">
+        <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> מענה אישי ומהיר בוואטסאפ</li>
+        <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> ליווי מלא בהגדרה ובחיבור לגוגל</li>
+        <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> כרטיס ממותג בצבע שלכם</li>
+      </ul>
+    </div>
+
+    <form class="order__form will-rise" id="orderForm" novalidate>
+      <h3 class="order__ftitle">הזמנת כרטיס ScanOn</h3>
+      <label class="field"><span>שם מלא</span><input type="text" name="name" autocomplete="name" required placeholder="ישראל ישראלי"></label>
+      <label class="field"><span>שם העסק</span><input type="text" name="biz" autocomplete="organization" required placeholder="שם העסק שלכם"></label>
+      <label class="field"><span>טלפון</span><input type="tel" name="phone" inputmode="tel" autocomplete="tel" required placeholder="050-0000000"></label>
+      <label class="field"><span>סוג העסק <small>(לא חובה)</small></span><input type="text" name="type" placeholder="מסעדה, מספרה, קליניקה…"></label>
+      <button type="submit" class="btn btn--gold btn--block btn--lg">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.19.84.85-3.11-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23s-3.69 8.49-8.24 8.49z" fill="currentColor"/><path d="M9.5 7.3c-.18-.42-.37-.42-.55-.43h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.7 4.18 3.68 2.07.82 2.49.66 2.94.62.45-.04 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.45-.72-1.67-.8-.22-.08-.38-.12-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.02-.37.1-.49.11-.11.24-.28.37-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.32-.74-1.8z" fill="currentColor"/></svg>
+        שליחה בוואטסאפ
+      </button>
+      <p class="order__note" id="orderNote" role="status" aria-live="polite"></p>
+      <p class="order__alt">מעדיפים לדבר ישר? <a data-wa data-wa-msg="היי, אשמח לפרטים על כרטיס ScanOn 🙂">פתחו וואטסאפ</a></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="foot">
+  <div class="shell foot__in">
+    <div class="foot__brand">
+      <a class="brand brand--light" href="#hero" aria-label="ScanOn">
+        <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 40 40" width="30" height="30"><rect width="40" height="40" rx="11" fill="#fff"/><path d="M14 26V14h5.2a3.4 3.4 0 0 1 0 6.8H14M26 14v12" stroke="var(--navy)" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="30.5" cy="12" r="2" fill="var(--gold)"/></svg></span>
+        <span class="brand__name">Scan<b>On</b></span>
+      </a>
+      <p>כרטיסי NFC חכמים שמביאים לעסק שלכם יותר ביקורות בגוגל — ב-Tap אחד.</p>
+    </div>
+    <nav class="foot__col" aria-label="קישורים">
+      <h4>ניווט</h4>
+      <a href="#how">איך זה עובד</a>
+      <a href="#benefits">יתרונות</a>
+      <a href="#why">למה ביקורות</a>
+      <a href="#faq">שאלות נפוצות</a>
+    </nav>
+    <div class="foot__col">
+      <h4>יצירת קשר</h4>
+      <a data-wa data-wa-msg="היי, אשמח לפרטים על כרטיס ScanOn 🙂">וואטסאפ</a>
+      <a href="tel:+972525372958">052-537-2958</a>
+      <a href="accessibility.html">הצהרת נגישות</a>
+      <a href="terms.html">תקנון ותנאי שימוש</a>
+      <a href="privacy.html">מדיניות פרטיות</a>
+    </div>
+    <a class="btn btn--gold btn--lg foot__cta magnetic" data-wa data-wa-msg="היי, אשמח להזמין כרטיס ScanOn לעסק שלי 🙂">הזמינו כרטיס</a>
+  </div>
+  <div class="shell foot__base">
+    <span>© <span data-year>2026</span> ScanOn · כל הזכויות שמורות</span>
+    <span>עוצב ופותח באהבה ע״י <a href="https://orian-design.com" target="_blank" rel="noopener">Orian Design</a></span>
+  </div>
+</footer>
+
+<!-- Sticky mobile CTA -->
+<a class="mcta" data-wa data-wa-msg="היי, אשמח להזמין כרטיס ScanOn לעסק שלי 🙂" aria-hidden="true">
+  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2z" fill="currentColor"/></svg>
+  הזמינו כרטיס — דברו איתנו
+</a>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/SplitText.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="assets/app.js?v=4"></script>
+</body>
+</html>
