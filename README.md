@@ -28,4 +28,3 @@ assets/vendor/      — ספריות (GSAP, Lenis, Swiper) — מתארחות ע
 ```
 
 ---
-נבנה ע״י Orian Design.
