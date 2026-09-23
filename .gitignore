@@ -9,3 +9,6 @@ Thumbs.db
 
 # Rejected logo drafts — final approved logo will be added fresh under assets/
 logo/
+
+# local knowledge-graph cache (graphify)
+graphify-out/

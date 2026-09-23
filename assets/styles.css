@@ -465,6 +465,44 @@ button{ font:inherit; color:inherit; cursor:pointer; background:none; border:non
 .legal__wrap a{ color:var(--navy-2); font-weight:600; text-decoration:underline }
 .legal__wrap strong{ color:var(--navy); font-weight:700 }
 
+/* ---------- Blog index ---------- */
+.blog__wrap{ max-width:1100px }
+.blog__head{ max-width:660px }
+.blog__head h1{ font-family:var(--f-display); font-weight:800; font-size:clamp(30px,5vw,46px); color:var(--navy); margin-top:18px; letter-spacing:-.01em }
+.blog__head p{ margin-top:14px; color:var(--muted); font-size:16.5px; line-height:1.75 }
+.blog__grid{ margin-top:50px; display:grid; grid-template-columns:repeat(3,1fr); gap:26px }
+.post-card{ background:var(--paper); border:1px solid var(--line); border-radius:var(--r-lg); padding:30px 26px; display:flex; flex-direction:column; gap:14px; transition:transform .3s var(--ease-out), box-shadow .3s, border-color .3s }
+.post-card:hover{ transform:translateY(-6px); box-shadow:0 26px 50px -30px rgba(2,38,88,.35); border-color:transparent }
+.post-card__ic{ width:52px; height:52px; border-radius:15px; display:grid; place-items:center; color:#fff; background:linear-gradient(135deg,var(--navy-2),var(--navy)); box-shadow:0 12px 26px -14px rgba(9,59,157,.8) }
+.post-card__tag{ align-self:flex-start; font-family:var(--f-display); font-weight:700; font-size:12px; color:var(--navy-2); background:var(--paper-2); padding:6px 14px; border-radius:99px }
+.post-card h2,.post-card h3{ font-family:var(--f-display); font-weight:700; font-size:20px; color:var(--navy); line-height:1.35 }
+.post-card p{ color:var(--muted); font-size:15px; line-height:1.65; flex:1 }
+.post-card__meta{ font-size:13px; font-weight:600; color:var(--muted) }
+.post-card__more{ font-family:var(--f-display); font-weight:700; font-size:14.5px; color:var(--navy-2); display:inline-flex; align-items:center; gap:6px; transition:gap .25s }
+.post-card__more svg{ transform:scaleX(-1) }
+.post-card:hover .post-card__more{ gap:10px }
+@media (max-width:900px){ .blog__grid{ grid-template-columns:1fr } }
+
+/* ---------- Blog article ---------- */
+.article__wrap{ max-width:740px }
+.article__tag{ display:inline-flex; align-items:center; font-family:var(--f-display); font-weight:700; font-size:12.5px; color:var(--navy-2); background:var(--paper-2); padding:6px 14px; border-radius:99px }
+.article__meta{ display:flex; flex-wrap:wrap; gap:14px; margin-top:14px; color:var(--muted); font-size:14px; font-weight:600 }
+.article__lede{ margin-top:26px; font-size:19px; line-height:1.75; color:var(--navy); font-weight:600 }
+.article__wrap h2{ scroll-margin-top:100px }
+.article__toc{ margin-top:34px; background:var(--paper); border:1px solid var(--line); border-radius:var(--r); padding:22px 24px }
+.article__toc h3{ font-family:var(--f-display); font-weight:700; font-size:15px; color:var(--navy); margin-bottom:12px }
+.article__toc ol{ padding-inline-start:20px; display:flex; flex-direction:column; gap:7px }
+.article__toc a{ color:var(--navy-2); font-weight:600; font-size:14.5px }
+.article__toc a:hover{ text-decoration:underline }
+.article__cta{ margin:44px 0; background:var(--navy); color:#fff; border-radius:var(--r-lg); padding:clamp(26px,4vw,38px); display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px }
+.article__cta h3{ font-family:var(--f-display); font-weight:800; font-size:21px }
+.article__cta p{ margin-top:6px; opacity:.85; font-size:14.5px; max-width:420px }
+.article__faq{ margin-top:14px; display:flex; flex-direction:column; gap:14px }
+.article__nav{ margin-top:60px; padding-top:28px; border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap }
+.article__nav a{ font-family:var(--f-display); font-weight:600; font-size:14.5px; color:var(--navy-2) }
+.article__more{ margin-top:20px; display:grid; grid-template-columns:1fr 1fr; gap:16px }
+@media (max-width:640px){ .article__more{ grid-template-columns:1fr } .article__cta{ flex-direction:column; align-items:flex-start } }
+
 /* ---------- Responsive ---------- */
 @media (max-width:1000px){
   .hero__grid{ grid-template-columns:1fr; text-align:center; gap:10px; padding-block:20px }
