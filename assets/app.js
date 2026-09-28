@@ -58,6 +58,189 @@
     });
   }
 
+  /* ---------- Shop + cart ---------- */
+  /* Payment is a fixed "יש חשבונית" page (required by the card processor); the monthly plan is set up later by phone. */
+  var PAY_URL = 'https://yeshlee.co.il/payment/c46a4bd0-a171-4f5e-8a86-9e106b1b0dcf';
+  var PLAN = '₪49.90';
+  var PRODUCTS = {
+    blue:  { name: 'כרטיס ScanOn · כחול', price: 200, img: 'assets/img/card-blue.png' },
+    black: { name: 'כרטיס ScanOn · שחור', price: 200, img: 'assets/img/card-black.png' }
+  };
+  var CK = 'scanon-cart', MAXQ = 20;
+  var BAG = '<path d="M6 7h12l-1 13H7L6 7z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linejoin="round"/><path d="M9 9V6a3 3 0 0 1 6 0v3" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>';
+  function ils(n) { return '₪' + n.toLocaleString('he-IL'); }
+
+  function initCart() {
+    var nav = document.querySelector('.nav__in');
+    if (!nav) return;
+    var onIndex = !!document.getElementById('shop');
+    var shopHref = onIndex ? '#shop' : 'index.html#shop';
+    var cart = {};
+    try { cart = JSON.parse(localStorage.getItem(CK)) || {}; } catch (e) {}
+    Object.keys(cart).forEach(function (k) { if (!PRODUCTS[k] || !(cart[k] > 0)) delete cart[k]; });
+
+    /* nav button */
+    var btn = document.createElement('button');
+    btn.className = 'nav__cart'; btn.type = 'button';
+    btn.setAttribute('aria-controls', 'cart'); btn.setAttribute('aria-expanded', 'false');
+    btn.innerHTML = '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">' + BAG + '</svg><span class="nav__cart-n">0</span>';
+    nav.insertBefore(btn, nav.querySelector('.nav__burger'));
+
+    /* panel */
+    var ov = document.createElement('div'); ov.className = 'cart-ov';
+    var panel = document.createElement('aside');
+    panel.className = 'cart'; panel.id = 'cart';
+    panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-modal', 'true');
+    panel.setAttribute('aria-labelledby', 'cartTitle'); panel.setAttribute('aria-hidden', 'true');
+    panel.setAttribute('data-lenis-prevent', '');
+    panel.innerHTML =
+      '<div class="cart__head"><h2 id="cartTitle">העגלה שלכם <span data-cn></span></h2>' +
+        '<button type="button" class="cart__x" aria-label="סגירת העגלה"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button></div>' +
+      '<div class="cart__body"><ul class="cart__list"></ul>' +
+        '<div class="cart__empty"><svg viewBox="0 0 24 24" width="54" height="54" aria-hidden="true">' + BAG + '</svg><b>העגלה עדיין ריקה</b>בחרו כרטיס והתחילו לאסוף ביקורות.<br><a class="btn btn--navy" href="' + shopHref + '" data-close>לבחירת כרטיס</a></div></div>' +
+      '<div class="cart__foot">' +
+        '<div class="cart__row"><span>סכום ביניים</span><b data-sub></b></div>' +
+        '<div class="cart__plan"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3M18 3v4h-4M6 21v-4h4" stroke="currentColor" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+          '<span><b>+ ' + PLAN + ' לחודש</b> מנוי למערכת ScanOn. התשלום החודשי בהוראת קבע: ניצור איתכם קשר אחרי ההזמנה כדי להסדיר אותו.</span></div>' +
+        '<div class="cart__row cart__row--total"><span>לתשלום עכשיו</span><b data-total></b></div>' +
+        '<label class="cart__terms"><input type="checkbox" id="cartTerms"> <span>קראתי ואני מאשר/ת את <a href="terms.html" target="_blank" rel="noopener">התקנון</a></span></label>' +
+        '<a class="btn btn--gold btn--lg btn--block cart__go is-off" href="' + PAY_URL + '" target="_blank" rel="noopener">להשלמת ההזמנה<svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>' +
+        '<p class="cart__secure"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2" fill="none"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2" fill="none"/></svg>תשלום מאובטח דרך "יש חשבונית"</p>' +
+      '</div>';
+    document.body.appendChild(ov); document.body.appendChild(panel);
+
+    var list = panel.querySelector('.cart__list');
+    var terms = panel.querySelector('#cartTerms'), termsLbl = panel.querySelector('.cart__terms');
+    var go = panel.querySelector('.cart__go');
+    var mcta = document.querySelector('.mcta'), mctaT = mcta && mcta.querySelector('.mcta__t');
+    var lastFocus = null;
+
+    function count() { return Object.keys(cart).reduce(function (s, k) { return s + cart[k]; }, 0); }
+    function total() { return Object.keys(cart).reduce(function (s, k) { return s + cart[k] * PRODUCTS[k].price; }, 0); }
+    function save() { try { localStorage.setItem(CK, JSON.stringify(cart)); } catch (e) {} }
+
+    function render() {
+      var n = count(), t = total();
+      btn.querySelector('.nav__cart-n').textContent = n;
+      btn.classList.toggle('has-items', n > 0);
+      btn.setAttribute('aria-label', n ? 'העגלה, ' + n + ' פריטים' : 'העגלה ריקה');
+      panel.dataset.empty = n ? '0' : '1';
+      panel.querySelector('[data-cn]').textContent = n ? '(' + n + ')' : '';
+      panel.querySelector('[data-sub]').textContent = ils(t);
+      panel.querySelector('[data-total]').textContent = ils(t);
+      list.innerHTML = Object.keys(PRODUCTS).filter(function (k) { return cart[k]; }).map(function (k) {
+        var p = PRODUCTS[k], q = cart[k];
+        return '<li class="cart__item" data-k="' + k + '"><img src="' + p.img + '" alt="" width="64" height="68">' +
+          '<div><b>' + p.name + '</b><small>' + ils(p.price) + ' ליחידה</small>' +
+            '<div class="qty" role="group" aria-label="כמות"><button type="button" data-d="1" aria-label="הוספת יחידה"' + (q >= MAXQ ? ' disabled' : '') + '>+</button>' +
+            '<span class="qty__n">' + q + '</span><button type="button" data-d="-1" aria-label="הפחתת יחידה"' + (q <= 1 ? ' disabled' : '') + '>−</button></div></div>' +
+          '<div class="cart__side"><span class="cart__line">' + ils(p.price * q) + '</span><button type="button" class="cart__rm" data-rm>הסרה</button></div></li>';
+      }).join('');
+      if (mctaT) mctaT.textContent = n ? 'לעגלה · ' + n + ' פריטים · ' + ils(t) : 'לרכישת כרטיס · ₪200';
+    }
+
+    function open() {
+      lastFocus = document.activeElement;
+      ov.classList.add('is-open'); panel.classList.add('is-open');
+      panel.setAttribute('aria-hidden', 'false'); btn.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('cart-on'); document.body.style.overflow = 'hidden';
+      if (lenis) lenis.stop();
+      setTimeout(function () { panel.querySelector('.cart__x').focus(); }, 60);
+    }
+    function close() {
+      if (!panel.classList.contains('is-open')) return;
+      ov.classList.remove('is-open'); panel.classList.remove('is-open');
+      panel.setAttribute('aria-hidden', 'true'); btn.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('cart-on'); document.body.style.overflow = '';
+      if (lenis) lenis.start();
+      if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+    }
+
+    function add(k, q, from) {
+      cart[k] = Math.min(MAXQ, (cart[k] || 0) + q); save(); render();
+      var fly = from && !reduce && from.getBoundingClientRect();
+      if (!fly || !fly.width) { open(); return; }
+      var to = btn.getBoundingClientRect();
+      var img = document.createElement('img');
+      img.src = PRODUCTS[k].img; img.className = 'cart-fly'; img.alt = '';
+      img.style.cssText = 'left:' + fly.left + 'px;top:' + fly.top + 'px;width:' + fly.width + 'px;height:' + fly.height + 'px';
+      document.body.appendChild(img);
+      var dx = to.left + to.width / 2 - (fly.left + fly.width / 2), dy = to.top + to.height / 2 - (fly.top + fly.height / 2);
+      var anim = img.animate([
+        { transform: 'translate(0,0) scale(1) rotate(0)', opacity: 1 },
+        { transform: 'translate(' + dx * 0.55 + 'px,' + (dy * 0.55 - 60) + 'px) scale(.5) rotate(-10deg)', opacity: 1, offset: 0.55 },
+        { transform: 'translate(' + dx + 'px,' + dy + 'px) scale(.08) rotate(-20deg)', opacity: 0.4 }
+      ], { duration: 720, easing: 'cubic-bezier(.5,0,.3,1)' });
+      anim.onfinish = function () {
+        img.remove();
+        btn.classList.remove('bump'); void btn.offsetWidth; btn.classList.add('bump');
+        setTimeout(open, 260);
+      };
+    }
+
+    /* product cards */
+    document.querySelectorAll('.prod').forEach(function (card) {
+      var n = card.querySelector('.qty__n'), minus = card.querySelector('[data-step="-1"]');
+      var q = 1;
+      function setQ(v) { q = Math.max(1, Math.min(MAXQ, v)); n.textContent = q; minus.disabled = q <= 1; }
+      setQ(1);
+      card.querySelectorAll('[data-step]').forEach(function (b) {
+        b.addEventListener('click', function () { setQ(q + +b.dataset.step); });
+      });
+      var addBtn = card.querySelector('[data-add]'), label = addBtn.firstChild, orig = label.nodeValue, t;
+      addBtn.addEventListener('click', function () {
+        add(addBtn.dataset.add, q, card.querySelector('.prod__media img'));
+        addBtn.classList.add('is-added'); label.nodeValue = 'נוסף לעגלה ✓ ';
+        clearTimeout(t);
+        t = setTimeout(function () { addBtn.classList.remove('is-added'); label.nodeValue = orig; setQ(1); }, 1800);
+      });
+    });
+
+    /* panel events */
+    list.addEventListener('click', function (e) {
+      var li = e.target.closest('.cart__item'); if (!li) return;
+      var k = li.dataset.k, d = e.target.closest('[data-d]');
+      if (d) cart[k] = Math.max(1, Math.min(MAXQ, cart[k] + +d.dataset.d));
+      else if (e.target.closest('[data-rm]')) delete cart[k];
+      else return;
+      save(); render();
+    });
+    btn.addEventListener('click', open);
+    ov.addEventListener('click', close);
+    panel.querySelector('.cart__x').addEventListener('click', close);
+    panel.querySelector('[data-close]').addEventListener('click', close);
+    terms.addEventListener('change', function () { go.classList.toggle('is-off', !terms.checked); termsLbl.classList.remove('is-err'); });
+    go.addEventListener('click', function (e) {
+      if (!count()) { e.preventDefault(); return; }
+      if (!terms.checked) {
+        e.preventDefault();
+        termsLbl.classList.remove('is-err'); void termsLbl.offsetWidth; termsLbl.classList.add('is-err');
+        terms.focus();
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (!panel.classList.contains('is-open')) return;
+      if (e.key === 'Escape') { close(); return; }
+      if (e.key === 'Tab') {   // keep focus inside the dialog
+        var f = panel.querySelectorAll('button:not([disabled]), a[href], input');
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+    /* mobile bar opens the cart once something is in it */
+    if (mcta) mcta.addEventListener('click', function (e) {
+      if (count()) { e.preventDefault(); e.stopImmediatePropagation(); open(); }
+    }, true);
+    window.addEventListener('storage', function (e) {
+      if (e.key !== CK) return;
+      try { cart = JSON.parse(e.newValue) || {}; } catch (x) { cart = {}; }
+      render();
+    });
+    if (location.hash === '#cart') open();
+    render();
+  }
+
   /* ---------- Lenis smooth scroll ---------- */
   function initLenis() {
     if (reduce || !window.Lenis) return;
@@ -355,7 +538,7 @@
   function boot() {
     var y = document.querySelector('[data-year]'); if (y) y.textContent = new Date().getFullYear();
     initWhatsApp(); initOrderForm(); initStars(); initFaq(); initA11y();
-    initLenis(); initNav(); initAnchors(); initHero(); initReveals(); initSteps(); initCounters(); initRankRise(); initMagnetic(); initMcta(); initParallax();
+    initLenis(); initNav(); initCart(); initAnchors(); initHero(); initReveals(); initSteps(); initCounters(); initRankRise(); initMagnetic(); initMcta(); initParallax();
     initLoader(revealHero);
     if (hasGSAP) window.addEventListener('load', function () { ScrollTrigger.refresh(); });
   }

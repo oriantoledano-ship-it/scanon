@@ -26,7 +26,7 @@
   <script src="assets/framebust.js?v=1"></script>
 <!-- Fonts -->
   <link rel="stylesheet" href="assets/fonts.css?v=1">
-<link rel="stylesheet" href="assets/styles.css?v=7">
+<link rel="stylesheet" href="assets/styles.css?v=9">
 <link rel="icon" href="assets/img/logo.png" type="image/png">
 
 <script type="application/ld+json">
@@ -37,7 +37,8 @@
   "description":"כרטיס NFC חכם שמפנה לקוחות ישירות לעמוד הביקורות של העסק בגוגל, כדי לצבור יותר ביקורות חמישה כוכבים בקלות.",
   "brand":{"@type":"Brand","name":"ScanOn"},
   "category":"NFC Review Card",
-  "image":"assets/img/card-blue.png"
+  "image":"https://scanon.online/assets/img/card-blue.png",
+  "offers":{"@type":"Offer","price":"200","priceCurrency":"ILS","availability":"https://schema.org/InStock","url":"https://scanon.online/#shop"}
 }
 </script>
 </head>
@@ -86,7 +87,7 @@
       <a href="#faq">שאלות נפוצות</a>
       <a href="blog.html">בלוג</a>
     </nav>
-    <a class="btn btn--nav" data-wa data-wa-msg="היי, אשמח לפרטים על כרטיס ScanOn לעסק שלי 🙂">הזמנת כרטיס</a>
+    <a class="btn btn--nav" href="#shop">הזמנת כרטיס</a>
     <button class="nav__burger" aria-label="פתיחת תפריט" aria-expanded="false" aria-controls="drawer"><span></span><span></span></button>
   </div>
 </header>
@@ -99,7 +100,7 @@
     <a href="#why">למה ביקורות</a>
     <a href="#faq">שאלות נפוצות</a>
     <a href="blog.html">בלוג</a>
-    <a class="btn btn--gold btn--lg" data-wa data-wa-msg="היי, אשמח לפרטים על כרטיס ScanOn לעסק שלי 🙂">הזמנת כרטיס</a>
+    <a class="btn btn--gold btn--lg" href="#shop">הזמנת כרטיס</a>
   </nav>
 </div>
 
@@ -125,7 +126,7 @@
         </h1>
         <p class="hero__lede">כרטיס NFC חכם של ScanOn — הלקוח מקרב את הטלפון, וקופץ ישר לעמוד הביקורות שלכם. <b>Tap אחד</b>, בלי אפליקציה, בלי טפסים. יותר ביקורות אמיתיות, דירוג גבוה יותר, ויותר לקוחות שמוצאים אתכם.</p>
         <div class="hero__cta">
-          <a class="btn btn--gold btn--lg magnetic" data-wa data-wa-msg="היי, אשמח להזמין כרטיס ScanOn לעסק שלי 🙂">
+          <a class="btn btn--gold btn--lg magnetic" href="#shop">
             הזמינו כרטיס
             <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M20 4L4 4M4 4l0 16M4 4l16 16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -134,7 +135,7 @@
         <ul class="hero__trust">
           <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> ללא אפליקציה</li>
           <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> עובד על כל טלפון</li>
-          <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> חד־פעמי, בלי מנוי</li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> מגיע מוכן לשימוש</li>
         </ul>
       </div>
 
@@ -318,30 +319,67 @@
       </article>
       <article class="ben will-fade">
         <div class="ben__ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M8 12a3 3 0 1 0 0-.01M16 12a3 3 0 1 1 0-.01M8 12c0 2.2 1.6 4 4 4s4-1.8 4-4" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg></div>
-        <h3>חד־פעמי, בלי מנוי חודשי</h3>
-        <p>קונים פעם אחת ומשתמשים שוב ושוב. בלי תשלומים חוזרים, בלי הפתעות.</p>
+        <h3>מחיר פשוט ושקוף</h3>
+        <p>₪200 לכרטיס ו-₪49.90 לחודש למערכת ScanOn. בלי עמלות נסתרות ובלי הפתעות.</p>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ===== PRODUCT COLORS ===== -->
-<section class="sec sec--product" id="product">
-  <div class="shell product__in">
-    <div class="product__copy will-rise">
-      <h2 class="h2">שני צבעים. <span class="u">אותה תוצאה.</span></h2>
-      <p class="lede">בחרו את הכרטיס שמתאים למותג שלכם — כחול קלאסי או שחור יוקרתי. שניהם עם אותו מנגנון חכם שמביא לכם ביקורות, ושניהם נראים מצוין על כל דלפק.</p>
-      <ul class="product__pts">
-        <li><span class="dot dot--blue" aria-hidden="true"></span> כחול ScanOn — נקי, ידידותי, בולט</li>
-        <li><span class="dot dot--black" aria-hidden="true"></span> שחור פרימיום — אלגנטי ומינימלי</li>
-        <li><span class="dot dot--gold" aria-hidden="true"></span> מגיע מוכן — מחובר מראש לעמוד הביקורות שלכם</li>
-      </ul>
-      <a class="btn btn--navy btn--lg magnetic" data-wa data-wa-msg="היי, אשמח לראות אפשרויות מיתוג לכרטיס ScanOn 🙂">בחרו את הכרטיס שלכם</a>
+<!-- ===== SHOP ===== -->
+<section class="sec sec--shop" id="shop">
+  <div class="shell">
+    <div class="sec-head sec-head--center will-rise">
+      <h2 class="h2">בחרו את <span class="u">הכרטיס שלכם.</span></h2>
+      <p class="lede">כחול קלאסי או שחור יוקרתי. שניהם עם אותו מנגנון חכם, ושניהם מגיעים מתוכנתים ומחוברים לעמוד הביקורות שלכם.</p>
     </div>
-    <div class="product__cards will-rise" aria-hidden="true">
-      <div class="pcard pcard--b"><img src="assets/img/card-blue.png" alt="" width="1000" height="1060" loading="lazy"></div>
-      <div class="pcard pcard--k"><img src="assets/img/card-black.png" alt="" width="1000" height="1060" loading="lazy"></div>
+    <div class="shop">
+      <article class="prod will-rise" data-sku="blue">
+        <div class="prod__media"><img src="assets/img/card-blue.png" alt="כרטיס ScanOn בצבע כחול" width="1000" height="1060" loading="lazy"></div>
+        <div class="prod__body">
+          <div class="prod__top"><h3>כרטיס ScanOn · כחול</h3><span class="prod__sw prod__sw--blue" aria-hidden="true"></span></div>
+          <p class="prod__desc">נקי, ידידותי ובולט על כל דלפק.</p>
+          <p class="prod__price"><b>₪200</b><span>ליחידה</span></p>
+          <p class="prod__plan">+ ₪49.90 לחודש למערכת ScanOn</p>
+          <div class="prod__buy">
+            <div class="qty" role="group" aria-label="כמות">
+              <button type="button" data-step="1" aria-label="הוספת יחידה">+</button>
+              <span class="qty__n" aria-live="polite">1</span>
+              <button type="button" data-step="-1" aria-label="הפחתת יחידה">−</button>
+            </div>
+            <button type="button" class="btn btn--navy prod__add" data-add="blue">
+              הוספה לעגלה
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linejoin="round"/><path d="M9 9V6a3 3 0 0 1 6 0v3" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="prod will-rise" data-sku="black">
+        <div class="prod__media prod__media--dark"><img src="assets/img/card-black.png" alt="כרטיס ScanOn בצבע שחור" width="1000" height="1060" loading="lazy"></div>
+        <div class="prod__body">
+          <div class="prod__top"><h3>כרטיס ScanOn · שחור</h3><span class="prod__sw prod__sw--black" aria-hidden="true"></span></div>
+          <p class="prod__desc">אלגנטי, מינימלי ופרימיום.</p>
+          <p class="prod__price"><b>₪200</b><span>ליחידה</span></p>
+          <p class="prod__plan">+ ₪49.90 לחודש למערכת ScanOn</p>
+          <div class="prod__buy">
+            <div class="qty" role="group" aria-label="כמות">
+              <button type="button" data-step="1" aria-label="הוספת יחידה">+</button>
+              <span class="qty__n" aria-live="polite">1</span>
+              <button type="button" data-step="-1" aria-label="הפחתת יחידה">−</button>
+            </div>
+            <button type="button" class="btn btn--navy prod__add" data-add="black">
+              הוספה לעגלה
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linejoin="round"/><path d="M9 9V6a3 3 0 0 1 6 0v3" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
     </div>
+    <ul class="shop__inc will-rise">
+      <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> מגיע מתוכנת ומחובר לעמוד הביקורות שלכם</li>
+      <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> תשלום מאובטח דרך "יש חשבונית"</li>
+      <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> את המנוי החודשי מסדירים בהוראת קבע, ניצור איתכם קשר אחרי ההזמנה</li>
+    </ul>
   </div>
 </section>
 
@@ -370,6 +408,7 @@
       <h2 class="h2">שאלות <span class="u">נפוצות</span></h2>
     </div>
     <div class="faq">
+      <details class="faq__item will-rise"><summary>כמה זה עולה?<span class="faq__x" aria-hidden="true"></span></summary><div class="faq__a"><p>כרטיס ScanOn עולה ₪200 ליחידה, ובנוסף ₪49.90 לחודש למערכת ScanOn. את הכרטיס משלמים באתר בתשלום מאובטח, ואת המנוי החודשי מסדירים בהוראת קבע: ניצור איתכם קשר אחרי ההזמנה כדי להשלים את זה.</p></div></details>
       <details class="faq__item will-rise"><summary>צריך אפליקציה מיוחדת כדי שזה יעבוד?<span class="faq__x" aria-hidden="true"></span></summary><div class="faq__a"><p>לא. טכנולוגיית ה-NFC מובנית כבר בטלפון של הלקוח. הוא פשוט מקרב את המכשיר לכרטיס — ועמוד הביקורות שלכם נפתח אוטומטית. שום דבר להתקין.</p></div></details>
       <details class="faq__item will-rise"><summary>זה עובד גם על אייפון וגם על אנדרואיד?<span class="faq__x" aria-hidden="true"></span></summary><div class="faq__a"><p>כן. הכרטיס עובד על הרוב המוחלט של הטלפונים מהשנים האחרונות — אייפון ואנדרואיד כאחד. באייפון הקריאה אוטומטית לגמרי, בלי שום פעולה מיוחדת.</p></div></details>
       <details class="faq__item will-rise"><summary>מה אם עדיין אין לי עמוד עסק בגוגל?<span class="faq__x" aria-hidden="true"></span></summary><div class="faq__a"><p>אין בעיה — נעזור לכם להקים ולחבר את פרופיל Google Business, ונכוון את הכרטיס ישר לעמוד הביקורות שלכם. אתם מקבלים הכל מוכן לשימוש.</p></div></details>
@@ -474,7 +513,7 @@
       <a href="terms.html">תקנון ותנאי שימוש</a>
       <a href="privacy.html">מדיניות פרטיות</a>
     </div>
-    <a class="btn btn--gold btn--lg foot__cta magnetic" data-wa data-wa-msg="היי, אשמח להזמין כרטיס ScanOn לעסק שלי 🙂">הזמינו כרטיס</a>
+    <a class="btn btn--gold btn--lg foot__cta magnetic" href="#shop">הזמינו כרטיס</a>
   </div>
   <div class="shell foot__base">
     <span>© <span data-year>2026</span> ScanOn · כל הזכויות שמורות</span>
@@ -483,15 +522,15 @@
 </footer>
 
 <!-- Sticky mobile CTA -->
-<a class="mcta" data-wa data-wa-msg="היי, אשמח להזמין כרטיס ScanOn לעסק שלי 🙂" aria-hidden="true">
-  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2z" fill="currentColor"/></svg>
-  הזמינו כרטיס — דברו איתנו
+<a class="mcta" href="#shop" aria-hidden="true" tabindex="-1">
+  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z" stroke="currentColor" stroke-width="1.9" fill="none" stroke-linejoin="round"/><path d="M9 9V6a3 3 0 0 1 6 0v3" stroke="currentColor" stroke-width="1.9" fill="none" stroke-linecap="round"/></svg>
+  <span class="mcta__t">לרכישת כרטיס · ₪200</span>
 </a>
 
 <script src="assets/vendor/gsap.min.js"></script>
 <script src="assets/vendor/ScrollTrigger.min.js"></script>
 <script src="assets/vendor/SplitText.min.js"></script>
 <script src="assets/vendor/lenis.min.js"></script>
-<script src="assets/app.js?v=4"></script>
+<script src="assets/app.js?v=5"></script>
 </body>
 </html>
