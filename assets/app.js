@@ -278,20 +278,37 @@
   }
 
   /* ---------- Anchor scroll with offset ---------- */
-  function initAnchors() {
+  /* Absolute page Y of a target, measured live (the pinned hero adds spacing after load). */
+  function goTo(t, instant) {
     var nav = document.getElementById('nav');
-    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-      a.addEventListener('click', function (e) {
-        var id = a.getAttribute('href');
-        if (id.length < 2) return;
-        var t = document.querySelector(id);
-        if (!t) return;
-        e.preventDefault();
-        var off = (nav ? nav.offsetHeight : 70) + 10;
-        if (lenis) lenis.scrollTo(t, { offset: -off });
-        else window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - off, behavior: reduce ? 'auto' : 'smooth' });
-      });
+    var y = Math.max(0, t.getBoundingClientRect().top + window.scrollY - (nav ? nav.offsetHeight : 70) - 10);
+    if (lenis) lenis.scrollTo(y, { immediate: !!instant, force: true });
+    else window.scrollTo({ top: y, behavior: (instant || reduce) ? 'auto' : 'smooth' });
+  }
+  function initAnchors() {
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a || e.defaultPrevented) return;
+      var href = a.getAttribute('href'), i = href.indexOf('#');
+      if (i < 0 || href.length - i < 2) return;
+      var page = href.slice(0, i);
+      // "#x" or "index.html#x" while already on the index page
+      if (page && !(page === 'index.html' && document.getElementById('shop'))) return;
+      var t = document.getElementById(href.slice(i + 1));
+      if (!t) return;
+      e.preventDefault();
+      goTo(t);
     });
+    // Arriving from another page with a hash: land on it once the pin spacing exists.
+    var id = location.hash.slice(1), t = id && id !== 'cart' && document.getElementById(id);
+    if (t) {
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      var land = function () { goTo(t, true); };
+      window.addEventListener('load', function () {
+        if (hasGSAP) ScrollTrigger.refresh();
+        land(); setTimeout(land, 350);
+      });
+    }
   }
 
   /* ---------- Hero: 3D scroll rotation (setup) ---------- */
